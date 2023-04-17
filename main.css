@@ -2,54 +2,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
-
-.container {
-    margin: 80px auto;
-    max-width: 640px;
-    width: 100%;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    height: 700px;
 }
 
-form {
-    margin-top: 40px;
+.container{
+    max-width: 500px;
+    height: 50%;
+    margin: 0 auto;
 }
 
-input,label, button {
-    display: block;
-    padding: 8px;
-    margin-bottom: 8px;
-    width: 100%;
-    resize: none;
+form{
+    padding: 30px 0;
 }
 
-button {
-    background-color: #2ecc71;
-    border: none;
-    text-transform: uppercase;
-    color: #fff;
+form input{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+}
+
+form button{
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
     font-weight: bold;
-    font-size: 18px;
-    font-style: italic;
+    
+}
+
+ul li{
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #27ae60;
-}
-
-.message-succses{
-    background-color: #27ae60;
-    padding: 16px;
-    color: #fff;
-    display: none;
-}
-
-.message-error{
-    background-color: red;
-    padding: 16px;
-    color: #fff;
-    display: none;
-}
-
+.riscado {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
