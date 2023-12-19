@@ -1,20 +1,44 @@
-$(document).ready(function(){
-    const endpoint = 'https://api.github.com/users/ViniciuMota';
+// abstrata
+function Animal(raca, idade) {
+    this.raca = raca;
+    this.idade = idade;
+  
+    this.emitirSom = function(nome) {
+      console.log(`${nome} faz som`);
+    }
+  }
+  
+  // herdeiras
+  function Cachorro (raca, idade, nome) {
+    this.nome = nome;
+    Animal.call(this, raca, idade);
+      
+    this.latir = function(){
+        console.log("Au au!")
+    }
+  }
+  
+  function Gato (raca, idade, nome) {
+    this.nome = nome;
+    Animal.call(this, raca, idade);
     
-    fetch(endpoint)
-    .then(function(resp){
-        return resp.json();
-    })
-    .then(function(json){
-        $('.profile-avatar').attr('src',json.avatar_url);
-        $('.profile-name').text(json.name);
-        $('.profile-username').text(`@${json.login}`);
-        $('.repositorios-item').text(json.public_repos)
-        $('.seguidores-item').text(json.followers)
-        $('.seguindo-item').text(json.following)
-        $('.profile-link').attr('href', json.html_url);
-    })
-    .catch(function(error){
-        alert("Ocorreu um erro ao buscar o endereço")
-    })
-})
+    this.miar = function(){
+        console.log("Miau!")
+    }
+  }
+  
+  // Criando instâncias de objetos
+  const cachorro1 = new Cachorro("Rex", 3, "Labrador");
+  const gato1 = new Gato("Whiskers", 2, "Branco");
+  const cachorro2 = new Cachorro("Buddy", 5, "Golden Retriever");
+  
+  // Testando as instâncias
+  console.log(cachorro1);
+  cachorro1.latir();
+  
+  console.log(gato1);
+  gato1.miar();
+  
+  console.log(cachorro2);
+  cachorro2.latir();
+  
